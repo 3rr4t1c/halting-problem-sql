@@ -5,7 +5,7 @@ I'have named this repository after it's main objective remind me a well known pr
 
 ---
 
-### Contents and Instruction:  
+### Contents:  
   
 This repository contains files related to to `SQL Analytics Problem` [available here](https://github.com/claranet-coast/sql-analytics-problem) and provide a possible solution for takling the problem:
 
@@ -18,5 +18,14 @@ This repository contains files related to to `SQL Analytics Problem` [available 
 
 ---
 
+### Instructions:
+
 * If all dependecies are satisfied, run `Data_Analytics.ipynb` and then `Model_Training.ipynb`.
 * Optionally, if all dependencies are satisfied, and you are interested only in model training, run `Model_Training.ipynb`, a pre-generated *Dataset* is provided.
+
+---
+
+### Comments:
+
+* Predicting the SQL query execution time can be framed as a regression problem, here this approach has been followed. Optionally, if we are interested in slow and not-slow queries we can frame it as a classification problem, using a threshold or more for a multi-class framing.
+* A SQL query execution time depends also on the RDBMS and server state at the moment the SQL query is issued. The system can have some resources locked due to concurrency handling or the accessed data can change in dimensions and even a simple query can slow down... so we may need to use a multivariate time series forecasting model for more accurate results, here I've used a more simple and faster-to-make approach.
